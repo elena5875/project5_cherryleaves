@@ -60,15 +60,44 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 ## Hypothesis and how to validate?
 
-- List here your project hypothesis(es) and how you envision validating it (them).
+- There are distinguishable different features to see the difference between a healthy cherry leaves and on with mildew. With this in mind we can create a Machine learning Algorithm wherein it can detect the difference between a healthy leaves and mildew just by present the picture. 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
-- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+To identify the mildew leaves.
+The primary goal for this project is to distinguish the difference between a healthy leaves and a mildew one. Data visualization can help understand the pattern in understanding the visual patterns and features associated with healthy and diseased leaves.
+
+To be able to improve efficiency
+Machine learning can help in automating the identification process, reducing the time and resources required for manual inspections.
+
+To be able to use in different crop disease detection
+This Machine learning might also be a help in detecting diseases or pests that is affecting the cherry trees. 
+
+
 
 ## ML Business Case
 
-- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+To be able to implement a machine learning solution that utilizes image classification techniques to differentiate between healthy cherry leaves and those infected with powdery mildew. The solution will involve the following steps:
+
+1. Data Collection. Gather a diverse dataset collection between healthy leaves and powdery mildew leaves of the Cherry Trees. It should be from different angle, lighting conditions and of differenct stages of the disease, powdery mildew.
+
+2. Data Processing. We process the dataset by cleaning and preprocessing it. We also try to enhance the quality of the images and the consistency of the dataset. This might involve augmentation and resizing techniques to improve the quality of the dataset. 
+
+3. Model Development. Train the machine learning model, such as CNN ( Convulutional Nueral Network), on the proprocessed data. This is so that it optimize the model architecture and hyperparameters to maximize accuracy and minimize overfitting.
+
+4. Model Evaluation. validate the train model using datasets to assess its performance in accurately classifying cherry leaves as healthy or infected. Metrics such as accuracy, precision, recall, and F1-score will be used to evaluate model performance. It needs to pass the criteria of 97% accuracy.
+
+5. Deployment. Create a web interface to interate the trained machine learning model for capturing and analyzing the leaf images. This platform should be a user friendly and easily accessible to the workers in the field.
+
+## Expected Outcome
+1. Accuracy Enhancement. The machine learning model is expected to have a high accuracy level in determining if the leaves have mildew or not.
+
+2. Efficiency Improvement. By doing automation in detecting the disease it saves time in inspecting every tree on the field all the time. The model should be able to shorten the time in inspecting the cherry leaves.
+
+4. Cost Saving. The business will be able to save time and labor with this model. 
+
+
+
 
 ## Dashboard Design
 
