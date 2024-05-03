@@ -1,53 +1,4 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Cherry Leaves project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. Log into your cloud IDE with your GitHub account.
-
-3. On your Dashboard, click on the New Workspace button
-
-4. Paste in the URL you copied from GitHub earlier
-
-5. Click Create
-
-6. Wait for the workspace to open. This can take a few minutes.
-
-7. Open a new terminal and `pip3 install -r requirements.txt`
-
-8. Open the jupyter_notebooks directory with this code 'jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser' copy the token code and click the browser. Paste the token code and click openlogin
- 
-9. Choose the notebook you want to open
-
-1. Click the kernel button and choose Python Environments. Also don't forget to click and choose trusted.
-
-Note that the kernel says Python 3.8.18 as it inherits from the workspace, so it will be Python-3.8.18 as installed by our template. To confirm this, you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, then you can create a new one with _Regenerate API Key_.
-
-## Dataset Content
-
-- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-- The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
+# Cherry Leaves ML Project
 
 ## Business Requirements
 
@@ -57,10 +8,6 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 - 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
 - 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
-
-## Hypothesis and how to validate?
-
-- There are distinguishable different features to see the difference between a healthy cherry leaves and on with mildew. With this in mind we can create a Machine learning Algorithm wherein it can detect the difference between a healthy leaves and mildew just by present the picture. 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -73,6 +20,10 @@ Machine learning can help in automating the identification process, reducing the
 To be able to use in different crop disease detection
 This Machine learning might also be a help in detecting diseases or pests that is affecting the cherry trees. 
 
+
+##  The Hypothesis and How to validate?
+
+- There are distinguishable different features to see the difference between a healthy cherry leaves and on with mildew. With this in mind we can create a Machine learning Algorithm wherein it can detect the difference between a healthy leaves and mildew just by present the picture. 
 
 
 ## ML Business Case
@@ -96,19 +47,70 @@ To be able to implement a machine learning solution that utilizes image classifi
 
 4. Cost Saving. The business will be able to save time and labor with this model. 
 
+## Dataset Content
 
+- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+- The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
 
 ## Dashboard Design
 
+### The dashboard should contain the following:
+A project summary page, showing the dataset summary and the client's requirements
+A page where the user can see an image showing the difference between a healthy cherry leaves to a powdery mildew leaves
+
+The user can upload an image and the ML should be able to determine if the image is healthy or has mildew.
+A table with the image name and prediction results, and a download button to download the table.
+A page indicating your project hypothesis and how you validated it across the project.
+A technical page displaying your model performance.
+
+
 - List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
 - Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+
+## Deployment
+
+
+## How to use this repo
+
+1. Use this template to create your GitHub project repo
+
+2. Log into your cloud IDE with your GitHub account.
+
+3. On your Dashboard, click on the New Workspace button
+
+4. Paste in the URL you copied from GitHub earlier
+
+5. Click Create
+
+6. Wait for the workspace to open. This can take a few minutes.
+
+7. Open a new terminal and `pip3 install -r requirements.txt`
+
+8. Open the jupyter_notebooks directory with this code ' jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser ' copy the token code and click the browser. Paste the token code and click openlogin
+ 
+9. Choose the notebook you want to open
+
+1. Click the kernel button and choose Python Environments. Also don't forget to click and choose trusted.
+
+Note that the kernel says Python 3.8.18 as it inherits from the workspace, so it will be Python-3.8.18 as installed by our template. To confirm this, you can use `! python --version` in a notebook code cell.
+
+## Cloud IDE Reminders
+
+To log into the Heroku toolbelt CLI:
+
+1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
+2. Scroll down to the _API Key_ and click _Reveal_
+3. Copy the key
+4. In the terminal, run `heroku_config`
+5. Paste in your API key when asked
+
+You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, then you can create a new one with _Regenerate API Key_.
 
 ## Unfixed Bugs
 
 - You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
 
-## Deployment
 
 ### Heroku
 
