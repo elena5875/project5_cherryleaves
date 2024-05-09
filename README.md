@@ -126,10 +126,26 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 6. If the slug size is too large, then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
+Libraries I used
+os
+seaborn as sns
+matplotlib.pyplot as plt
+imread from skimage.io
+numpy as np
+joblib
+Shutil
+cv2
+pandas as pd
+random
 
-- Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
 
 ## Credits
+
+https://github.com/GyanShashwat1611/WalkthroughProject01/blob/main/jupyter_notebooks/02%20-%20DataVisualization.ipynb
+
+https://joblib.readthedocs.io/en/latest/index.html
+https://matplotlib.org/stable/api/figure_api.html
+https://docs.python.org/3/library/os.html#querying-the-size-of-a-terminal
 
 - In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism.
 - You can break the credits section up into Content and Media, depending on what you have included in your project.
