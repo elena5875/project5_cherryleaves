@@ -128,16 +128,16 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 ## Main Data Analysis and Machine Learning Libraries
 Libraries I used
 os
-seaborn as sns
-matplotlib.pyplot as plt
+seaborn 
+matplotlib
 imread from skimage.io
-numpy as np
+numpy 
 joblib
 Shutil
 cv2
-pandas as pd
+pandas
 random
-
+tensorflow
 
 ## Credits
 
@@ -147,8 +147,7 @@ https://joblib.readthedocs.io/en/latest/index.html
 https://matplotlib.org/stable/api/figure_api.html
 https://docs.python.org/3/library/os.html#querying-the-size-of-a-terminal
 
-- In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
+
 
 ### Content
 
@@ -158,9 +157,7 @@ https://docs.python.org/3/library/os.html#querying-the-size-of-a-terminal
 
 ### Media
 
+My dataset phots were provided by https://www.kaggle.com/codeinstitute/cherry-leaves
 - The photos used on the home and sign-up page are from This Open-Source site.
 - The images used for the gallery page were taken from this other open-source site.
 
-## Acknowledgements (optional)
-
-- Thank the people who provided support throughout this project.
