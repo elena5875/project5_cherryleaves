@@ -1,7 +1,7 @@
 import streamlit as st
 from Data_visualization import visualize_data
-from Powdery_mildew_detection import Powdery_mildew_detection
-from app_pages.multi_page import MultiPage
+from Powdery_mildew_detection import main as powdery_mildew_detection_main
+
 
 class MultiPage:
     def __init__(self, app_name):
@@ -32,30 +32,57 @@ def page1_function():
     """)
 
 def page2_function():
-    st.title("")
-    visualize_data("/workspace/project5_cherryleaves/jupyter_notebooks/inputs/validation/healthy", "/workspace/project5_cherryleaves/jupyter_notebooks/inputs/validation/powdery_mildew")
+    st.title("Hypothesis and Validation")
+    st.write("""
+    There are distinguishable features to differentiate between a healthy cherry leaf and one with mildew. With this in mind, we hypothesize that a machine learning algorithm can accurately detect the difference between healthy leaves and mildew-infected ones solely by analyzing images.
+
+    To validate this hypothesis, we will employ a dataset containing images of both healthy cherry leaves and leaves affected by powdery mildew. By training a machine learning model on this dataset, we aim to achieve high accuracy in classifying cherry leaves as healthy or infected.
+
+    Additionally, we will evaluate the model's performance using various metrics such as accuracy, precision, recall, and F1 score. These metrics will provide insights into the model's ability to correctly identify mildew-infected leaves while minimizing false positives and false negatives.
+
+    The success of our hypothesis will be determined by the model's performance on an independent test dataset, ensuring its generalization to unseen cherry leaf images.
+    """)
+
+    st.subheader("Machine Learning Model Architecture")
+
+    st.write("""
+    For our machine learning model, we will explore various deep learning architectures such as convolutional neural networks (CNNs). CNNs have shown promising results in image classification tasks due to their ability to automatically learn relevant features from raw pixel data.
+
+    The model will be trained on a labeled dataset consisting of images of healthy cherry leaves and leaves infected with powdery mildew. We will use techniques such as data augmentation to artificially increase the size of our training dataset and improve the model's robustness.
+
+    After training, the model will be evaluated on a separate validation dataset to assess its performance metrics. We will fine-tune hyperparameters and optimize the model architecture based on validation results to achieve the best possible performance.
+
+    Once the model demonstrates satisfactory performance on the validation dataset, we will deploy it to our Streamlit app for real-time inference on user-uploaded cherry leaf images.
+    """)
+
 
 def page3_function():
-    st.title("Powdery Mildew Detection")
-    # Add your content here for the Powdery Mildew Detection page
+    st.title("")
+    st.write(""" Can be used as a reference to see the difference between a healthy and a Powdery Milded leaf """)
+    visualize_data("/workspace/project5_cherryleaves/jupyter_notebooks/inputs/validation/healthy", "/workspace/project5_cherryleaves/jupyter_notebooks/inputs/validation/powdery_mildew")
 
 def page4_function():
-    st.title("Hypothesis and Validation")
-    # Add your content here for the Hypothesis and Validation page
+    st.title("")
+    st.write(""" Upload the Cherry Leaf Images to see if the leaf has Powdery Mildew presence""")
+    powdery_mildew_detection_main()
 
 def page5_function():
-    st.title("ML Prediction Metrics")
-    # Add your content here for the ML Prediction Metrics page
+    st.title("Summary")
+    st.write("""The machine learning model exhibits commendable accuracy in distinguishing between cherry leaves infected with powdery mildew and healthy ones, even when confronted with unclear images. This high accuracy underscores the effectiveness of the model in identifying subtle manifestations of powdery mildew on cherry leaves.
+
+However, there remains a significant area for improvement as the model struggles with the task of verifying whether the uploaded image indeed contains a cherry leaf. This indicates a need for further refinement and training to enhance the model's ability to accurately discern between images of cherry leaves and other objects.
+
+In essence, while the model demonstrates promising performance in detecting powdery mildew, there is still ample room for enhancement in its general leaf identification capabilities.""" )
 
 def main():
     my_app = MultiPage("Cherry Leaves Analysis")
 
     # Add pages to the app
-    my_app.add_page("General Information", page1_function)  
-    my_app.add_page("Data Visualization", page2_function)
-    my_app.add_page("Powdery Mildew Detection", page3_function)
-    my_app.add_page("Hypothesis and Validation", page4_function)
-    my_app.add_page("ML Prediction Metrics", page5_function)
+    my_app.add_page("General Information", page1_function)
+    my_app.add_page("Hypothesis", page2_function)  
+    my_app.add_page("Data Visualization", page3_function)
+    my_app.add_page("Powdery Mildew Detection", page4_function)
+    my_app.add_page("Summary", page5_function)
 
     # Run the app
     my_app.run()
