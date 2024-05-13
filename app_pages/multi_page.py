@@ -1,5 +1,7 @@
 import streamlit as st
 from Data_visualization import visualize_data
+from Powdery_mildew_detection import Powdery_mildew_detection
+from app_pages.multi_page import MultiPage
 
 class MultiPage:
     def __init__(self, app_name):
