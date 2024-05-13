@@ -23,7 +23,7 @@ This Machine learning might also be a help in detecting diseases or pests that i
 
 ##  The Hypothesis and How to validate?
 
-- There are distinguishable different features to see the difference between a healthy cherry leaves and on with mildew. With this in mind we can create a Machine learning Algorithm wherein it can detect the difference between a healthy leaves and mildew just by present the picture. 
+- There are distinguishable  features to see the difference between a healthy cherry leaf and a powdery mildew. With this in mind we can create a Machine learning Algorithm wherein it can detect the difference between a healthy leaves and mildew just by uploading  a  picture.
 
 
 ## ML Business Case
@@ -160,4 +160,5 @@ https://docs.python.org/3/library/os.html#querying-the-size-of-a-terminal
 My dataset phots were provided by https://www.kaggle.com/codeinstitute/cherry-leaves
 - The photos used on the home and sign-up page are from This Open-Source site.
 - The images used for the gallery page were taken from this other open-source site.
+
 
