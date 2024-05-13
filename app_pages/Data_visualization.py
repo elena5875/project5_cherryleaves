@@ -1,119 +1,65 @@
 import os
 import streamlit as st
 from PIL import Image
-import json
-import matplotlib.pyplot as plt
 
+def visualize_data(healthy_image_dir, powdery_mildew_image_dir):
+    st.title("Data Visualization")
 
-# Function to visualize cell data
-def visualize_cell_data(directory):
-    # Open the JSON file
-    with open('/workspace/project5_cherryleaves/jupyter_notebooks/outputs/computed_data.json', 'r') as f:
-        # Load the JSON data
-        data = json.load(f)
+    # Get the first image file in the directory for healthy leaves
+    healthy_image_files = [f for f in os.listdir(healthy_image_dir) if f.lower().endswith('.jpg') or f.lower().endswith('.jpeg')]
+    if healthy_image_files:
+        healthy_image_path = os.path.join(healthy_image_dir, healthy_image_files[0])
+        healthy_image = Image.open(healthy_image_path)
+        st.image(healthy_image, caption='Healthy Leaves')
 
-    # Print the data
-    st.write("Visualized Cell Data:")
-    for item in data:
-        # Print each item
-        st.write(item)
+        # Button to view more healthy images
+        if st.button("View More Healthy Leaves"):
+            display_more_images(healthy_image_dir, healthy_image_files)
 
-# Call the function to run the visualization
-visualize_cell_data('/workspace/project5_cherryleaves/jupyter_notebooks/inputs/train/healthy')
-
-
-# Function to load and resize images
-def load_and_resize_images(directory, num_images=5, target_size=(100, 100)):
-    image_files = [f for f in os.listdir(directory) if f.lower().endswith('.jpg') or f.lower().endswith('.jpeg')]
-    images = []
-    for i, image_file in enumerate(image_files[:num_images]):
-        image_path = os.path.join(directory, image_file)
-        img = Image.open(image_path)
-        img_resized = img.resize(target_size)
-        images.append(img_resized)
-    return images
-
-# Function to display images in rows
-def display_images_in_rows(images, num_images_per_row=5):
-    num_images = len(images)
-    num_rows = (num_images + num_images_per_row - 1) // num_images_per_row
-    for i in range(num_rows):
-        row_images = images[i * num_images_per_row: (i + 1) * num_images_per_row]
-        st.image(row_images, caption=[f'Image {i+1}' for i in range(len(row_images))], width=100)
-
-# Function to visualize cell data
-def visualize_cell_data(directory):
-    st.write("### Cells Visualizer")
-    st.info(
-        f"* The client is interested to have a study to visually differentiate "
-        f"healthy leaves and leaves affected by powdery mildew.")
-    
-    import json
-
-if st.checkbox("Difference between average and variability image"):
-    with open("/workspace/project5_cherryleaves/jupyter_notebooks/outputs/computed_data.json", "r") as file:
-        computed_data = json.load(file)
-    avg_healthy = plt.imread(computed_data["avg_var_Healthy"])
-    avg_powdery_mildew = plt.imread(computed_data["avg_var_Powdery_Mildew"])
-
-    st.warning(
-        f"* We notice the average and variability images didn't show "
-        f"patterns where we could intuitively differentiate one to another." 
-        f"However, a small difference in color pigment of the average images is seen for both labels")
-
-    st.image(avg_healthy, caption='Healthy Leaves - Average and Variability')
-    st.image(avg_powdery_mildew, caption='Powdery Mildew - Average and Variability')
-    st.write("---")
-
-if st.checkbox("Differences between average healthy and average powdery mildew leaves"):
-    with open("/workspace/project5_cherryleaves/jupyter_notebooks/outputs/computed_data.json", "r") as file:
-        computed_data = json.load(file)
-    diff_between_avgs = plt.imread(computed_data["avg_diff"])
-
-    st.warning(
-        f"* We notice this study didn't show "
-        f"patterns where we could intuitively differentiate one to another.")
-    st.image(diff_between_avgs, caption='Difference between average images')
-
-if st.checkbox("Image Montage"): 
-    st.write("* To refresh the montage, click on 'Create Montage' button")
-    labels = os.listdir(directory)
-    label_to_display = st.selectbox(label="Select label", options=labels, index=0)
-
-        
-        # Load and display images in rows
-    images = load_and_resize_images(os.path.join(directory, label_to_display))
-    if images:
-            display_images_in_rows(images, num_images_per_row=5)
     else:
-            st.write(f"No images found in directory: {os.path.join(directory, label_to_display)}")
-        
-    st.write("---")
+        st.warning("No image files found in the directory for healthy leaves.")
 
-# Streamlit app
-st.title('Cell Image Visualizer')
+    # Get the first image file in the directory for powdery mildew leaves
+    powdery_mildew_image_files = [f for f in os.listdir(powdery_mildew_image_dir) if f.lower().endswith('.jpg') or f.lower().endswith('.jpeg')]
+    if powdery_mildew_image_files:
+        powdery_mildew_image_path = os.path.join(powdery_mildew_image_dir, powdery_mildew_image_files[0])
+        powdery_mildew_image = Image.open(powdery_mildew_image_path)
+        st.image(powdery_mildew_image, caption='Powdery Mildew Leaves')
 
-# Sidebar
-st.sidebar.title('Settings')
-num_images = st.sidebar.slider('Number of Images', min_value=1, max_value=10, value=5)
+        # Button to view more powdery mildew images
+        if st.button("View More Powdery Mildew Leaves"):
+            display_more_images(powdery_mildew_image_dir, powdery_mildew_image_files)
 
-# Main content for healthy images
-st.header('Healthy Cell Images')
-healthy_images = load_and_resize_images('/workspace/project5_cherryleaves/jupyter_notebooks/inputs/train/healthy', num_images=num_images)
-if healthy_images:
-    st.write(f"Loaded {len(healthy_images)} healthy cell images.")
-    display_images_in_rows(healthy_images)
-else:
-    st.write("No healthy cell images loaded.")  
+    else:
+        st.warning("No image files found in the directory for powdery mildew leaves.")
 
-# Main content for powdery mildew images
-st.header('Powdery Mildew Cell Images')
-powdery_mildew_images = load_and_resize_images('/workspace/project5_cherryleaves/jupyter_notebooks/inputs/train/powdery_mildew', num_images=num_images)
-if powdery_mildew_images:
-    st.write(f"Loaded {len(powdery_mildew_images)} powdery mildew cell images.")
-    display_images_in_rows(powdery_mildew_images)
-else:
-    st.write("No powdery mildew cell images loaded.")
+def display_more_images(directory, image_files):
+    # Display additional images from the directory, 5 at a time
+    st.write(f"Additional Images:")
+    if "index" not in st.session_state:
+        st.session_state.index = 0
 
-# Visualize cell data
-visualize_cell_data('/workspace/project5_cherryleaves/jupyter_notebooks/inputs/train/healthy')
+    index = st.session_state.index
+    for image_file in image_files[index:index+5]:
+        image_path = os.path.join(directory, image_file)
+        image = Image.open(image_path)
+        st.image(image, caption=image_file, use_column_width=True, clamp=True, output_format='auto')
+
+    # Button to show previous images
+    if st.button("Show Previous"):
+        st.session_state.index = max(0, index - 5)
+
+    # Button to show next images
+    if st.button("Show Next"):
+        st.session_state.index = min(len(image_files), index + 5)
+
+    # Button to go back to single image display
+    if st.button("Go Back to Single Image"):
+        st.session_state.index = 0
+
+# Define paths to the directories containing validation images
+healthy_image_dir = '/workspace/project5_cherryleaves/jupyter_notebooks/inputs/validation/healthy'
+powdery_mildew_image_dir = '/workspace/project5_cherryleaves/jupyter_notebooks/inputs/validation/powdery_mildew'
+
+# Call the visualization function with the directory paths
+visualize_data(healthy_image_dir, powdery_mildew_image_dir)
