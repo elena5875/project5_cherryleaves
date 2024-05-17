@@ -4,13 +4,14 @@ from tensorflow.keras.preprocessing import image as keras_image
 import numpy as np
 import os
 import io
+import tensorflow as tf
 
 # Function to load the trained model
 def load_model():
     model_path = '/workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/cherry_leaves_model.keras'
-    model = tf.keras.models.load_model(model_path)
+    model = tf.keras.models.load_model(model_path)  # This line loads the entire SavedModel directory
     return model
-
+    
 # Function to predict image class
 def predict_image_class(image_array, model):
     labels = ["healthy", "powdery_mildew"]

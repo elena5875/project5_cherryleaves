@@ -1,1 +1,1 @@
-{"healthy": 1472, "powdery_mildew": 1472}
+{"healthy": {"average_shape": null, "std_shape": null}, "powdery_mildew": {"average_shape": null, "std_shape": null}}
