@@ -1,10 +1,8 @@
 import streamlit as st
+import pandas as pd
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image as keras_image
 import numpy as np
-import os
-import io
-import tensorflow as tf
 
 # Function to load the trained model
 def load_model():
@@ -20,13 +18,6 @@ def predict_image_class(image_array, model):
     predicted_class_index = np.argmax(pred_proba)
     predicted_class = labels[predicted_class_index]
     pred_probability = pred_proba[predicted_class_index]
-    
-    if predicted_class == "healthy":
-        print("Image has healthy leaves.")
-    elif predicted_class == "powdery_mildew":
-        print("Image has powdery mildew.")
-    else:
-        print("Image could not be identified.")
     
     return predicted_class, pred_probability
 
@@ -48,10 +39,7 @@ def main():
     uploaded_files = st.file_uploader("Choose up to 10 images...", accept_multiple_files=True, type=["jpg", "jpeg", "png"], key="fileuploader")
 
     if uploaded_files:
-        num_uploaded_files = len(uploaded_files)
-        st.write(f"You uploaded {num_uploaded_files} images.")
-        st.write("Classifying...")
-
+        results = []
         for uploaded_file in uploaded_files[:10]:
             # Convert the uploaded file to image array
             img = keras_image.load_img(uploaded_file, target_size=(256, 256))
@@ -60,25 +48,28 @@ def main():
             # Check if image is a leaf
             is_leaf_image = is_leaf(img_array)
 
-            # Display image shape
-            st.write(f"Image Shape: {img_array.shape}")
-
             # Check if image is a leaf
             if not is_leaf_image:
-                print("Image could not be identified as a leaf.")
-                st.write("Image could not be identified as a leaf.")
-                continue
+                result = ("Image could not be identified as a leaf.", "", "")
+            else:
+                # Predict the class
+                predicted_class, pred_probability = predict_image_class(img_array, model)
+                result = (uploaded_file.name, predicted_class, f"{pred_probability:.4f}")
 
-            # Predict the class
-            predicted_class, pred_probability = predict_image_class(img_array, model)
+            results.append(result)
 
-            # Display the result
-            st.write(f"Predicted Class: {predicted_class}")
-            st.write(f"Predicted Probability: {pred_probability:.4f}")
+        # Convert results to DataFrame
+        results_df = pd.DataFrame(results, columns=["Image Name", "Predicted Class", "Predicted Probability"])
 
-            # Check if the predicted class is not a leaf
-            if predicted_class != "healthy" and predicted_class != "powdery_mildew":
-                st.write("Image could not be identified.")
+        # Display results table
+        st.table(results_df)
+
+        # Button to download or print the results
+        if st.button("Download/Print Results"):
+            # Save results to CSV file
+            with st.spinner("Downloading..."):
+                results_df.to_csv("predictions.csv", index=False)
+            st.success("Results downloaded successfully. You can find them in 'predictions.csv'.")
 
 # Run the app
 if __name__ == "__main__":

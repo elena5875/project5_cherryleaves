@@ -1,14 +1,38 @@
 import os
 import streamlit as st
 from PIL import Image
+import numpy as np
 import itertools
 import random
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Function to determine if the image is a leaf
+def is_leaf(image_array, aspect_ratio_threshold=0.8, green_pixel_threshold=0.2):
+    # Check aspect ratio
+    aspect_ratio = image_array.shape[0] / image_array.shape[1]
+    if aspect_ratio < aspect_ratio_threshold:
+        print("Image aspect ratio suggests it's not a leaf.")
+        return False
+    
+    # Check color distribution (assuming green leaves)
+    green_pixels = np.mean(image_array[:, :, 1] / 255)  # Green channel
+    if green_pixels < green_pixel_threshold:
+        print("Not enough green pixels. Image may not be a leaf.")
+        return False
+    
+    return True
+
 # Function to visualize data
 def visualize_data(healthy_image_dir, powdery_mildew_image_dir):
-    st.title("Data Visualization")
+    st.title("Cherry Leaf Disease Detection")
+
+    # Add a section for downloading the dataset
+    st.header("Download Cherry Leaf Images for Live Prediction")
+    st.markdown("""
+    You can download a set of cherry leaf images for live prediction from the Kaggle dataset: 
+    [Download Cherry Leaf Images](https://www.kaggle.com/codeinstitute/cherry-leaves/download)
+    """)
 
     # Get image files from directories
     healthy_image_files = [f for f in os.listdir(healthy_image_dir) if f.lower().endswith('.jpg') or f.lower().endswith('.jpeg')]
@@ -76,40 +100,4 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
         plot_idx = list(itertools.product(range(nrows), range(ncols)))
 
         # Create a Figure and display images
-        fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=figsize)
-        for x in range(nrows * ncols):
-            img = Image.open(os.path.join(dir_path, label_to_display, img_idx[x]))
-            img_shape = img.size
-            axes[plot_idx[x][0], plot_idx[x][1]].imshow(img)
-            axes[plot_idx[x][0], plot_idx[x][1]].set_title(f"Width {img_shape[0]}px x Height {img_shape[1]}px")
-            axes[plot_idx[x][0], plot_idx[x][1]].set_xticks([])
-            axes[plot_idx[x][0], plot_idx[x][1]].set_yticks([])
-        plt.tight_layout()
-
-        st.pyplot(fig=fig)
-
-    else:
-        st.warning("The label you selected doesn't exist.")
-        st.write(f"The existing options are: {labels}") 
-
-# Main function
-def main():
-    st.title("Cherry Leaf Disease Detection")
-
-    # Add a section for downloading the dataset
-    st.header("Download Cherry Leaf Images for Live Prediction")
-    st.markdown("""
-    You can download a set of cherry leaf images for live prediction from the Kaggle dataset: 
-    [Download Cherry Leaf Images](https://www.kaggle.com/codeinstitute/cherry-leaves/download)
-    """)
-
-    # Directories for images
-    healthy_image_dir = '/workspace/project5_cherryleaves/jupyter_notebooks/inputs/test/healthy'
-    powdery_mildew_image_dir = '/workspace/project5_cherryleaves/jupyter_notebooks/inputs/test/powdery_mildew'
-
-    # Visualize data
-    visualize_data(healthy_image_dir, powdery_mildew_image_dir)
-
-# Run the main function
-if __name__ == "__main__":
-    main()
+        fig, axes
