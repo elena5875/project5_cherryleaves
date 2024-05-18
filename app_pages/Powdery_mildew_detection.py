@@ -45,39 +45,40 @@ def main():
     model = load_model()
 
     # File uploader
-    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+    uploaded_files = st.file_uploader("Choose up to 10 images...", accept_multiple_files=True, type=["jpg", "jpeg", "png"], key="fileuploader")
 
-    if uploaded_file is not None:
-        st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
-        st.write("")
+    if uploaded_files:
+        num_uploaded_files = len(uploaded_files)
+        st.write(f"You uploaded {num_uploaded_files} images.")
         st.write("Classifying...")
 
-        # Convert the uploaded file to image array
-        img = keras_image.load_img(uploaded_file, target_size=(256, 256))
-        img_array = keras_image.img_to_array(img)  # Define img_array here
+        for uploaded_file in uploaded_files[:10]:
+            # Convert the uploaded file to image array
+            img = keras_image.load_img(uploaded_file, target_size=(256, 256))
+            img_array = keras_image.img_to_array(img)  # Define img_array here
 
-        # Check if image is a leaf
-        is_leaf_image = is_leaf(img_array)
+            # Check if image is a leaf
+            is_leaf_image = is_leaf(img_array)
 
-        # Display image shape
-        st.write(f"Image Shape: {img_array.shape}")
+            # Display image shape
+            st.write(f"Image Shape: {img_array.shape}")
 
-        # Check if image is a leaf
-        if not is_leaf_image:
-            print("Image could not be identified as a leaf.")
-            st.write("Image could not be identified as a leaf.")
-            return
+            # Check if image is a leaf
+            if not is_leaf_image:
+                print("Image could not be identified as a leaf.")
+                st.write("Image could not be identified as a leaf.")
+                continue
 
-        # Predict the class
-        predicted_class, pred_probability = predict_image_class(img_array, model)
+            # Predict the class
+            predicted_class, pred_probability = predict_image_class(img_array, model)
 
-        # Display the result
-        st.write(f"Predicted Class: {predicted_class}")
-        st.write(f"Predicted Probability: {pred_probability:.4f}")
+            # Display the result
+            st.write(f"Predicted Class: {predicted_class}")
+            st.write(f"Predicted Probability: {pred_probability:.4f}")
 
-        # Check if the predicted class is not a leaf
-        if predicted_class != "healthy" and predicted_class != "powdery_mildew":
-            st.write("Image could not be identified.")
+            # Check if the predicted class is not a leaf
+            if predicted_class != "healthy" and predicted_class != "powdery_mildew":
+                st.write("Image could not be identified.")
 
 # Run the app
 if __name__ == "__main__":

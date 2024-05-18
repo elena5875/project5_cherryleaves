@@ -4,10 +4,9 @@ from PIL import Image
 import itertools
 import random
 import matplotlib.pyplot as plt
+import seaborn as sns
 
-
-
-
+# Function to visualize data
 def visualize_data(healthy_image_dir, powdery_mildew_image_dir):
     st.title("Data Visualization")
 
@@ -21,7 +20,7 @@ def visualize_data(healthy_image_dir, powdery_mildew_image_dir):
     # Display powdery mildew leaves
     display_images(powdery_mildew_image_dir, powdery_mildew_image_files[:5], "Powdery Mildew")
 
-
+# Function to display images
 def display_images(directory, image_files, label):
     st.write(f"Images from {os.path.basename(directory)}:")
 
@@ -56,35 +55,30 @@ def display_images(directory, image_files, label):
     if col2.button("Show Next", key=f"next_button_{label.lower().replace(' ', '_')}"):
         st.session_state[f"index_{label.lower().replace(' ', '_')}"] = (selected_image_index + 1) % len(image_files)
 
-
+# Function to create image montage
 def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
     sns.set_style("white")
     labels = os.listdir(dir_path)
 
-    # subset the class you are interested to display
+    # Subset the class you are interested to display
     if label_to_display in labels:
-
-        # checks if your montage space is greater than subset size
-        # how many images in that folder
-        images_list = os.listdir(dir_path+'/'+ label_to_display)
+        images_list = os.listdir(os.path.join(dir_path, label_to_display))
         if nrows * ncols < len(images_list):
             img_idx = random.sample(images_list, nrows * ncols)
         else:
-            print(
+            st.warning(
                 f"Decrease nrows or ncols to create your montage. \n"
                 f"There are {len(images_list)} in your subset. "
                 f"You requested a montage with {nrows * ncols} spaces")
             return
 
-        # create list of axes indices based on nrows and ncols
-        list_rows = range(0, nrows)
-        list_cols = range(0, ncols)
-        plot_idx = list(itertools.product(list_rows, list_cols))
+        # Create list of axes indices based on nrows and ncols
+        plot_idx = list(itertools.product(range(nrows), range(ncols)))
 
-        # create a Figure and display images
+        # Create a Figure and display images
         fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=figsize)
-        for x in range(0, nrows*ncols):
-            img = Image.open(dir_path + '/' + label_to_display + '/' + img_idx[x])
+        for x in range(nrows * ncols):
+            img = Image.open(os.path.join(dir_path, label_to_display, img_idx[x]))
             img_shape = img.size
             axes[plot_idx[x][0], plot_idx[x][1]].imshow(img)
             axes[plot_idx[x][0], plot_idx[x][1]].set_title(f"Width {img_shape[0]}px x Height {img_shape[1]}px")
@@ -95,8 +89,27 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
         st.pyplot(fig=fig)
 
     else:
-        print("The label you selected doesn't exist.")
-        print(f"The existing options are: {labels}") 
+        st.warning("The label you selected doesn't exist.")
+        st.write(f"The existing options are: {labels}") 
 
+# Main function
+def main():
+    st.title("Cherry Leaf Disease Detection")
 
+    # Add a section for downloading the dataset
+    st.header("Download Cherry Leaf Images for Live Prediction")
+    st.markdown("""
+    You can download a set of cherry leaf images for live prediction from the Kaggle dataset: 
+    [Download Cherry Leaf Images](https://www.kaggle.com/codeinstitute/cherry-leaves/download)
+    """)
 
+    # Directories for images
+    healthy_image_dir = '/workspace/project5_cherryleaves/jupyter_notebooks/inputs/test/healthy'
+    powdery_mildew_image_dir = '/workspace/project5_cherryleaves/jupyter_notebooks/inputs/test/powdery_mildew'
+
+    # Visualize data
+    visualize_data(healthy_image_dir, powdery_mildew_image_dir)
+
+# Run the main function
+if __name__ == "__main__":
+    main()
