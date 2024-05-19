@@ -142,11 +142,12 @@ tensorflow
 ## Credits
 
 https://github.com/GyanShashwat1611/WalkthroughProject01/blob/main/jupyter_notebooks/02%20-%20DataVisualization.ipynb
-
 https://joblib.readthedocs.io/en/latest/index.html
 https://matplotlib.org/stable/api/figure_api.html
 https://docs.python.org/3/library/os.html#querying-the-size-of-a-terminal
 https://devcenter.heroku.com/categories/command-line
+https://stackoverflow.com/
+
 
 
 ### Content
