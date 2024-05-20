@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -5,6 +6,9 @@ import matplotlib.pyplot as plt
 from Data_visualization import visualize_data
 from Powdery_mildew_detection import main as powdery_mildew_detection_main
 from Summary import page5_function
+
+# Retrieve the port number from the PORT environment variable provided by Heroku
+port = int(os.environ.get("PORT", 8080))
 
 class MultiPage:
     def __init__(self, app_name):
@@ -100,4 +104,5 @@ def main():
     my_app.run()
 
 if __name__ == "__main__":
-    main()
+    port = int(os.environ.get("PORT", 8080))  
+    st.run(host="0.0.0.0", port=port)
