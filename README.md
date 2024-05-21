@@ -166,6 +166,7 @@ I used the toolbelt CLI in gitpod and did the following:
        https://devcenter.heroku.com/categories/command-line
        https://stackoverflow.com/
        https://github.com/Code-Institute-Solutions/milestone-project-mildew-detection-in-cherry-leaves.git
+       https://discuss.streamlit.io/t/streamlit-app-works-locally-but-not-on-heroku/14772
 
 
 ### Content
