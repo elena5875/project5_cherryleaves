@@ -23,8 +23,24 @@ This Machine learning might also be a help in detecting diseases or pests that i
 
 ##  The Hypothesis and How to validate?
 
-- There are distinguishable  features to see the difference between a healthy cherry leaf and a powdery mildew. With this in mind we can create a Machine learning Algorithm wherein it can detect the difference between a healthy leaves and mildew just by uploading  a  picture.
+- Hypothesis:
+By creating a  machine learning algorithms, it is possible to develop a model capable of accurately distinguishing between healthy cherry leaves and leaves affected by powdery mildew based on distinct visual features. It is believe  that  with these characteristics value such as color, texture, and patterns it will be able to discern the differences between healthy and infected leaves, enabling the ML to classify images with high accuracy.
 
+Validation:
+To validate our hypothesis, we will undertake the following steps:
+
+1. Data Collection: Collect different dataset consisting of images for both healthy cherry leaves and leaves affected with powdery mildew. This is to ensure that the dataset encompasses various stages of infection and environmental conditions to enhance the accuracy of the model.
+
+2. Data Preprocessing: Process the collected images to standardize their format, resolution, and orientation. Additionally, perform preprocessing techniques such as augmentation to enhance the model's ability to generalize across different samples.
+
+3. Model Development: Design the model to learn discriminative features from the input images and make accurate predictions regarding leaf health status.
+
+4. Training and Validation:  Train the model on the training data while looking at the  performance on the validation set. Adjust hyperparameters and network architecture as necessary to optimize model performance.
+
+5. Evaluation: Assess the trained model's performance using the reserved testing set. Measure key metrics such as accuracy, and F1-score to quantify the model's ability to correctly classify healthy and infected leaves.
+
+
+By  following these steps, we aim to validate our hypothesis and demonstrate the accuracy of using machine learning algorithms for  detection of powdery mildew in cherry leaves in a fast way.
 
 ## ML Business Case
 
@@ -55,20 +71,25 @@ To be able to implement a machine learning solution that utilizes image classifi
 
 ## Dashboard Design
 
-### The dashboard should contain the following:
-A project summary page, showing the dataset summary and the client's requirements
-A page where the user can see an image showing the difference between a healthy cherry leaves to a powdery mildew leaves
+### The dashboard 
+You should see in the dashboard the following:
 
-The user can upload an image and the ML should be able to determine if the image is healthy or has mildew.
-A table with the image name and prediction results, and a download button to download the table.
-A page indicating your project hypothesis and how you validated it across the project.
-A technical page displaying your model performance.
+PAGE 1 A project summary page, showing the dataset summary and the client's requirements
+
+PAGE 2 A page indicating your project hypothesis and how you validated it across the project.A page where the user can see an image showing the difference between a healthy cherry leaves to a powdery mildew leaves
+
+PAGE 3 A page where the user can see 2 images showing the difference between a healthy cherry leaves to a powdery mildew leaves
+       The user also has a change to download some pictures from kaggle as a source of reference and later on can be used to test the ML app.
+
+PAGE 4 The user can upload an image and the ML should be able to determine if the image is healthy or has mildew.
+       The user can also see the table of the image name and the classification of the leaf. Once the user is done the user has the option to download it or print it.
+
+PAGE 5 A page indicating your project hypothesis and how you validated it across the project.
+     A technical page displaying your model performance.
 
 
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
-- Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
 
-## Deployment
+
 
 
 ## How to use this repo
@@ -93,37 +114,32 @@ A technical page displaying your model performance.
 
 1. Click the kernel button and choose Python Environments. Also don't forget to click and choose trusted.
 
-Note that the kernel says Python 3.8.18 as it inherits from the workspace, so it will be Python-3.8.18 as installed by our template. To confirm this, you can use `! python --version` in a notebook code cell.
 
-## Cloud IDE Reminders
+## Unfixed Bugs
+I tried to create another machine learning for the ML app wherein the ML app can also detect if the image is a leaf or not. But has been unsuccessful.
+Deploying the ML app to heroku. For days I have been trying to deploy my ML app in Heroku and it seems to sometimes work sometimes not.
 
-To log into the Heroku toolbelt CLI:
+## Deployment
+
+### Heroku
+
+- The App live link is: `https://cherryleaves5904-854d3ae19318.herokuapp.com/`
+- runtime.txt is python-3.8.19 and I used Heroku 20
+
+
+I deployed the repository in Heroku
+
+I used the toolbelt CLI in gitpod and did the following:
 
 1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
 2. Scroll down to the _API Key_ and click _Reveal_
 3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
+4. In the terminal. type in heroku login -i
+5. Give the email and password. Password should be the API key: HRKU-3e5a6715-3b88-4520-b0b8-bc3aa1e90124
+6. once done write heroku git:remote -a cherryleaves5904
+7. Write: git push heroku main
+8. Write: heroku open
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, then you can create a new one with _Regenerate API Key_.
-
-## Unfixed Bugs
-
-- You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
-
-
-### Heroku
-
-- The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
-- Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-- The project was deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
 Libraries I used
@@ -147,32 +163,17 @@ https://matplotlib.org/stable/api/figure_api.html
 https://docs.python.org/3/library/os.html#querying-the-size-of-a-terminal
 https://devcenter.heroku.com/categories/command-line
 https://stackoverflow.com/
-
+https://github.com/Code-Institute-Solutions/milestone-project-mildew-detection-in-cherry-leaves.git
 
 
 ### Content
+The content of the Multipage, Hypothesis and Summary were partly reference on the following website
 
-- The text for the Home page was taken from Wikipedia Article A.
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
+https://en.wikipedia.org/wiki/Powdery_mildew
+https://www.gardendesign.com/how-to/powdery-mildew.html
 
 ### Media
 
 My dataset phots were provided by https://www.kaggle.com/codeinstitute/cherry-leaves
-- The photos used on the home and sign-up page are from This Open-Source site.
-- The images used for the gallery page were taken from this other open-source site.
 
 
-
-
-mäpko¨i¨+0i ¨+0io¨´+0o
-jvui oi8 hpi8 hpio pi jpio j
-
-bouihoiuymopj poijpoibhiouvo7i
- oiuhopih
- ioph p98u
-  po9u poujå
-  mpoiuå
-  moojoöjaotjea
-  gmrpaogjk
-  gmrpa
