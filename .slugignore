@@ -8,6 +8,7 @@
 
 # Data:
 
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/computed_data.json
 /workspace/project5_cherryleaves/jupyter_notebooks/outputs/image_augmentation
 /workspace/project5_cherryleaves/jupyter_notebooks/outputs/modelling
 /workspace/project5_cherryleaves/jupyter_notebooks/outputs/train
@@ -44,4 +45,3 @@
 *.pyo
 __pycache__/
 node_modules/
-jupyter_notebooks/**
