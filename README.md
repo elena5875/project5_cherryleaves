@@ -96,7 +96,7 @@ PAGE 5 A page indicating your project hypothesis and how you validated it across
 
 1. Use this template to create your GitHub project repo
 
-2. Log into your cloud IDE with your GitHub account.
+2. Log in to Gitpod with your GitHub account.
 
 3. On your Dashboard, click on the New Workspace button
 
@@ -108,16 +108,18 @@ PAGE 5 A page indicating your project hypothesis and how you validated it across
 
 7. Open a new terminal and `pip3 install -r requirements.txt`
 
-8. Open the jupyter_notebooks directory with this code ' jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser ' copy the token code and click the browser. Paste the token code and click openlogin
- 
-9. Choose the notebook you want to open
+8. Open the jupyter_notebooks directory with this code ' jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser ' copy the token code and click the browser button. 
 
-1. Click the kernel button and choose Python Environments. Also don't forget to click and choose trusted.
+9. Paste the token code and click openlogin
+ 
+10. Choose the notebook you want to open
+
+11. Click the kernel button and choose Python Environments. Also don't forget to click and choose trusted.
 
 
 ## Unfixed Bugs
-I tried to create another machine learning for the ML app wherein the ML app can also detect if the image is a leaf or not. But has been unsuccessful.
-Deploying the ML app to heroku. For days I have been trying to deploy my ML app in Heroku and it seems to sometimes work sometimes not.
+       I tried to create another machine learning for the ML app wherein the ML app can also detect if the image is a leaf or not. But has been unsuccessful.
+       Deploying the ML app to heroku. For days I have been trying to deploy my ML app in Heroku and it seems to sometimes work sometimes not.
 
 ## Deployment
 
@@ -142,28 +144,28 @@ I used the toolbelt CLI in gitpod and did the following:
 
 
 ## Main Data Analysis and Machine Learning Libraries
-Libraries I used
-os
-seaborn 
-matplotlib
-imread from skimage.io
-numpy 
-joblib
-Shutil
-cv2
-pandas
-random
-tensorflow
+       Libraries I used
+       os
+       seaborn 
+       matplotlib
+       imread from skimage.io
+       numpy 
+       joblib
+       Shutil
+       cv2
+       pandas
+       random
+       tensorflow
 
 ## Credits
 
-https://github.com/GyanShashwat1611/WalkthroughProject01/blob/main/jupyter_notebooks/02%20-%20DataVisualization.ipynb
-https://joblib.readthedocs.io/en/latest/index.html
-https://matplotlib.org/stable/api/figure_api.html
-https://docs.python.org/3/library/os.html#querying-the-size-of-a-terminal
-https://devcenter.heroku.com/categories/command-line
-https://stackoverflow.com/
-https://github.com/Code-Institute-Solutions/milestone-project-mildew-detection-in-cherry-leaves.git
+       https://github.com/GyanShashwat1611/WalkthroughProject01/blob/main/jupyter_notebooks/02%20-%20DataVisualization.ipynb
+       https://joblib.readthedocs.io/en/latest/index.html
+       https://matplotlib.org/stable/api/figure_api.html
+       https://docs.python.org/3/library/os.html#querying-the-size-of-a-terminal
+       https://devcenter.heroku.com/categories/command-line
+       https://stackoverflow.com/
+       https://github.com/Code-Institute-Solutions/milestone-project-mildew-detection-in-cherry-leaves.git
 
 
 ### Content
@@ -174,6 +176,10 @@ https://www.gardendesign.com/how-to/powdery-mildew.html
 
 ### Media
 
-My dataset phots were provided by https://www.kaggle.com/codeinstitute/cherry-leaves
+My dataset photOs were provided by https://www.kaggle.com/codeinstitute/cherry-leaves
+
+### Acknowledgements 
+   I would just like to thank myself for being patient  and not trying to kill the following apps. CodeAnywhere, Gitpod and most specially Heroku. 
+   I know I might encounter them again but I think I have the patience and the tools to not go crazy when working with them. Sorry just need to vent it out here.
 
 
