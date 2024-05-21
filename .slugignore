@@ -1,28 +1,44 @@
-/workspace/project5_cherryleaves/jupyter_notebooks/inputs
-/workspace/project5_cherryleaves/jupyter_notebooks/outputs
-/workspace/project5_cherryleaves/jupyter_notebooks/cherry-leaves.zip
+# Notebooks:
+
 /workspace/project5_cherryleaves/jupyter_notebooks/DataCollection.ipynb
 /workspace/project5_cherryleaves/jupyter_notebooks/DataModelling.ipynb
 /workspace/project5_cherryleaves/jupyter_notebooks/DataVisualization.ipynb
 /workspace/project5_cherryleaves/jupyter_notebooks/Untitled.ipynb
 /workspace/project5_cherryleaves/jupyter_notebooks/.ipynb_checkpoints
+
+# Data:
+
+/workspace/project5_cherryleaves/jupyter_notebooks/inputs
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs
+/workspace/project5_cherryleaves/jupyter_notebooks/cherry-leaves.zip
+
+# App Pages:
+
 /workspace/project5_cherryleaves/app_pages/predictions.csv
+/workspace/project5_cherryleaves/app_pages/.ipynb_checkpoints
+/workspace/project5_cherryleaves/app_pages/__pycache__/*
+
+# Configuration and Environment:
+
 /workspace/project5_cherryleaves/.vscode
-/workspace/project5_cherryleaves/jupyter_notebooks
+/workspace/project5_cherryleaves/.gitpod.dockerfile
+/workspace/project5_cherryleaves/.gitpod.yml
+
+# Project Metadata:
+
 /workspace/project5_cherryleaves/README.md
-kaggle.json
+/workspace/project5_cherryleaves/kaggle.json
+/workspace/project5_cherryleaves/.git
+
+# Excluded Files and Patterns:
+
 *.tmp
 /test
 *.backup
 *.log
-.git/
 *.pdf
 *.pyc
 *.pyo
-_pycache_/
+__pycache__/
 node_modules/
 jupyter_notebooks/**
-.gitpod.dockerfile
-.gitpod.yml
-app_pages/__pycache__/*
-/workspace/project5_cherryleaves/app_pages/.ipynb_checkpoints
