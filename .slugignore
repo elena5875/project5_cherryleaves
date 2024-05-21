@@ -15,6 +15,14 @@
 /workspace/project5_cherryleaves/jupyter_notebooks/inputs/test
 /workspace/project5_cherryleaves/jupyter_notebooks/inputs/train
 /workspace/project5_cherryleaves/jupyter_notebooks/cherry-leaves.zip
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/average_image.png
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/variability_image.png
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/mean_dimensions_per_label.png
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/variability_image.png
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/model_training_losses.png
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/model_training_acc.png
+
+
 
 # App Pages:
 
