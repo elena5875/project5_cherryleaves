@@ -8,8 +8,11 @@
 
 # Data:
 
-/workspace/project5_cherryleaves/jupyter_notebooks/inputs
-/workspace/project5_cherryleaves/jupyter_notebooks/outputs
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/image_augmentation
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/modelling
+/workspace/project5_cherryleaves/jupyter_notebooks/outputs/train
+/workspace/project5_cherryleaves/jupyter_notebooks/inputs/test
+/workspace/project5_cherryleaves/jupyter_notebooks/inputs/train
 /workspace/project5_cherryleaves/jupyter_notebooks/cherry-leaves.zip
 
 # App Pages:
