@@ -1,3 +1,3 @@
-web: streamlit run --server.port $PORT /workspace/project5_cherryleaves/app_pages/multi_page.py
+web: sh setup.sh && streamlit run app.py
 
 
