@@ -66,7 +66,7 @@ def page2_function():
 def page3_function():
     st.title("")
     st.write(""" Can be used as a reference to see the difference between a healthy and a Powdery Milded leaf """)
-    visualize_data("inputs/validation/healthy", "inputs/validation/powdery_mildew")  
+    visualize_data("/workspace/project5_cherryleaves/jupyter_notebooks/inputs/validation/healthy", "/workspace/project5_cherryleaves/jupyter_notebooks/inputs/validation/powdery_mildew")  
 
 def page4_function():
     st.title("")
