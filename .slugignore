@@ -1,13 +1,8 @@
-# Notebooks:
-
 jupyter_notebooks/DataCollection.ipynb
 jupyter_notebooks/DataModelling.ipynb
 jupyter_notebooks/DataVisualization.ipynb
 jupyter_notebooks/Untitled.ipynb
-herojupyter_notebooks/.ipynb_checkpoints
-
-# Data:
-
+jupyter_notebooks/.ipynb_checkpoints
 jupyter_notebooks/outputs/computed_data.json
 jupyter_notebooks/outputs/image_augmentation
 jupyter_notebooks/outputs/modelling
@@ -22,28 +17,15 @@ jupyter_notebooks/inputs/train
 /workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/model_training_losses.png
 /workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/model_training_acc.png
 /workspace/project5_cherryleaves/app_pages/css/styles.css
-
-
-# App Pages:
-
 /workspace/project5_cherryleaves/app_pages/predictions.csv
 /workspace/project5_cherryleaves/app_pages/.ipynb_checkpoints
 /workspace/project5_cherryleaves/app_pages/__pycache__/*
-
-
-# Configuration and Environment:
 *.vscode
 .gitpod.dockerfile
 .gitpod.yml
-
-# Project Metadata:
-
 README.md
 kaggle.json
 *.git
-
-# Excluded Files and Patterns:
-
 *.tmp
 /test
 *.backup
