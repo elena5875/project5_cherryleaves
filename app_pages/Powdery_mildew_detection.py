@@ -6,7 +6,7 @@ import numpy as np
 
 # Function to load the trained model
 def load_model():
-    model_path = '/workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/cherry_leaves_model.keras'  
+    model_path = 'jupyter_notebooks/outputs/v1/cherry_leaves_model.keras'  
     model = tf.keras.models.load_model(model_path)
     return model
 
