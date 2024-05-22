@@ -1,19 +1,19 @@
 # Notebooks:
 
-/workspace/project5_cherryleaves/jupyter_notebooks/DataCollection.ipynb
-/workspace/project5_cherryleaves/jupyter_notebooks/DataModelling.ipynb
-/workspace/project5_cherryleaves/jupyter_notebooks/DataVisualization.ipynb
-/workspace/project5_cherryleaves/jupyter_notebooks/Untitled.ipynb
-/workspace/project5_cherryleaves/jupyter_notebooks/.ipynb_checkpoints
+jupyter_notebooks/DataCollection.ipynb
+jupyter_notebooks/DataModelling.ipynb
+jupyter_notebooks/DataVisualization.ipynb
+jupyter_notebooks/Untitled.ipynb
+herojupyter_notebooks/.ipynb_checkpoints
 
 # Data:
 
-/workspace/project5_cherryleaves/jupyter_notebooks/outputs/computed_data.json
-/workspace/project5_cherryleaves/jupyter_notebooks/outputs/image_augmentation
-/workspace/project5_cherryleaves/jupyter_notebooks/outputs/modelling
-/workspace/project5_cherryleaves/jupyter_notebooks/outputs/train
-/workspace/project5_cherryleaves/jupyter_notebooks/inputs/test
-/workspace/project5_cherryleaves/jupyter_notebooks/inputs/train
+jupyter_notebooks/outputs/computed_data.json
+jupyter_notebooks/outputs/image_augmentation
+jupyter_notebooks/outputs/modelling
+jupyter_notebooks/outputs/train
+jupyter_notebooks/inputs/test
+jupyter_notebooks/inputs/train
 /workspace/project5_cherryleaves/jupyter_notebooks/cherry-leaves.zip
 /workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/average_image.png
 /workspace/project5_cherryleaves/jupyter_notebooks/outputs/v1/variability_image.png
@@ -32,16 +32,15 @@
 
 
 # Configuration and Environment:
-
-/workspace/project5_cherryleaves/.vscode
-/workspace/project5_cherryleaves/.gitpod.dockerfile
-/workspace/project5_cherryleaves/.gitpod.yml
+*.vscode
+.gitpod.dockerfile
+.gitpod.yml
 
 # Project Metadata:
 
-/workspace/project5_cherryleaves/README.md
-/workspace/project5_cherryleaves/kaggle.json
-/workspace/project5_cherryleaves/.git
+README.md
+kaggle.json
+*.git
 
 # Excluded Files and Patterns:
 
