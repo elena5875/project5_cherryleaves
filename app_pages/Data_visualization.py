@@ -1,4 +1,5 @@
 import os
+import sys
 import streamlit as st
 from PIL import Image
 import numpy as np
@@ -6,6 +7,10 @@ import itertools
 import random
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+# Ensure Heroku can read the correct file paths
+dir = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(os.path.join(dir, '..', '..'))
 
 def is_leaf(image_array, aspect_ratio_threshold=0.8, green_pixel_threshold=0.2):
     aspect_ratio = image_array.shape[0] / image_array.shape[1]
@@ -46,7 +51,7 @@ def display_images(directory, image_files, label):
         st.session_state[f"index_{label.lower().replace(' ', '_')}"] = 0
 
     selected_image_index = st.session_state[f"index_{label.lower().replace(' ', '_')}"]
-    cols = st.beta_columns(2)  # Use st.beta_columns() instead of st.columns()
+    cols = st.columns(2)  # Use st.columns()
 
     selected_image_path1 = os.path.join(directory, image_files[selected_image_index])
     selected_image1 = Image.open(selected_image_path1)
@@ -65,7 +70,6 @@ def display_images(directory, image_files, label):
         st.session_state[f"index_{label.lower().replace(' ', '_')}"] = max(0, selected_image_index - 1)
     elif next_button:
         st.session_state[f"index_{label.lower().replace(' ', '_')}"] = (selected_image_index + 1) % len(image_files)
-
 
 def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
     sns.set_style("white")

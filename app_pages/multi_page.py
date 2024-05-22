@@ -1,8 +1,6 @@
 import os
 import streamlit as st
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 from Data_visualization import visualize_data
 from Powdery_mildew_detection import main as powdery_mildew_detection_main
 from Summary import page5_function
@@ -28,15 +26,14 @@ class MultiPage:
             selected_page['function']()
 
 def page1_function():
-    st.write('<div class="page1-container"></div>', unsafe_allow_html=True)
     st.title("General Information")
     st.write("""
     The cherry plantation crop has the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product. Powdery Mildew is a pest that is caused by a fungus *Podosphaera clandestina*. On Leaves, 
     powdery mildew appears as patches of white, powdery or felt-like fungal growth. This can also affect the fruits of the tree. Fruit infection appears as a white powdery bloom as the fruit ripens. To check if the tree has powdery mildew, 
-    it takes time and a lot of labor to check the Cherry Tree one by one in the farm.If trees have a very bad infestation, it can cause a very bad fruit production for the trees. If also uncontrolled this can cause deformities to the leaves and the fruits.
+    it takes time and a lot of labor to check the Cherry Tree one by one in the farm. If trees have a very bad infestation, it can cause a very bad fruit production for the trees. If also uncontrolled this can cause deformities to the leaves and the fruits.
     Therefore, the company has invested in creating a Machine Learning App so that farmers can just take pictures of the leaf in trees suspected to be positive of  powdery mildew fungus.
-    The aim is for an early detection and faster identification so that treatment to the plant will immediately be administered, thus ensuring a good yeild in the production.
-    """, unsafe_allow_html=True)
+    The aim is for an early detection and faster identification so that treatment to the plant will immediately be administered, thus ensuring a good yield in the production.
+    """)
 
 def page2_function():
     st.title("Hypothesis and Validation")
@@ -62,17 +59,20 @@ def page2_function():
     Once the model demonstrates satisfactory performance on the validation dataset, we will deploy it to our Streamlit app for real-time inference on user-uploaded cherry leaf images.
     """)
 
-
 def page3_function():
-    st.title("")
+    st.title("Data Visualization")
     st.write(""" Can be used as a reference to see the difference between a healthy and a Powdery Milded leaf """)
+    
+    # Load and visualize data
     visualize_data("jupyter_notebooks/inputs/validation/healthy", "jupyter_notebooks/inputs/validation/powdery_mildew")  
 
 def page4_function():
-    st.title("")
-    st.write(""" Upload the Cherry Leaf Images to see if the leaf has Powdery Mildew presence""")
+    st.write("""Upload the Cherry Leaf Images to see if the leaf has Powdery Mildew presence""")
+
+    # Assuming powdery_mildew_detection_main() is a function for uploading images and predicting powdery mildew presence
     powdery_mildew_detection_main()
 
+    
 def main():
     # Inject custom CSS styles
     st.markdown('<link rel="stylesheet" type="text/css" href="css/styles.css">', unsafe_allow_html=True)

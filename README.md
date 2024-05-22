@@ -118,8 +118,11 @@
 
 
 ## Unfixed Bugs
-       I tried to create another machine learning for the ML app wherein the ML app can also detect if the image is a leaf or not. But has been unsuccessful.
-       Deploying the ML app to heroku. For days I have been trying to deploy my ML app in Heroku and it seems to sometimes work sometimes not.
+       1.I tried to create another machine learning for the ML app wherein the ML app can also detect if the image is a leaf or not. But has been unsuccessful.
+       
+       2.Deploying the ML app to heroku. For days I have been trying to deploy my ML app in Heroku and it seems to sometimes work sometimes not. 
+       
+       3.For Some reason when I run my ML app locally everything works fine but if I run my app in Heroku. Heroku has decided that SavedModel file does not exist at: jupyter_notebooks/outputs/v1/cherry_leaves_model.keras/{saved_model.pbtxt|saved_model.pb}. I tried everything however nothing is working until the deadline.
 
 ## Deployment
 
@@ -145,18 +148,16 @@
 
 ## Main Data Analysis and Machine Learning Libraries
        Libraries I used
-       os
-       seaborn 
-       matplotlib
-       imread from skimage.io
-       numpy 
-       joblib
-       Shutil
-       cv2
-       pandas
-       random
-       tensorflow
-
+       - tensorflow-cpu 2.6.0  used for creating the model
+       - numpy 1.19.2          used for converting to array 
+       - scikit-learn 0.24.2   used for evaluating the model
+       - streamlit 0.85.0      used for creating the dashboard
+       - pandas 1.1.2          used for creating/saving as dataframe
+       - matplotlib 3.3.1      used for plotting the sets' distribution
+       - keras 2.6.0           used for setting model's hyperparamters
+       - plotly 5.12.0         used for plotting the model's learning curve 
+       - seaborn 0.11.0        used for plotting the model's confusion matrix
+       - streamlit             used for creating and sharing this project's interface
 ## Credits and References
 
        https://github.com/GyanShashwat1611/WalkthroughProject01/blob/main/jupyter_notebooks/02%20-%20DataVisualization.ipynb
