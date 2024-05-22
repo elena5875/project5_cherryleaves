@@ -46,7 +46,7 @@ def display_images(directory, image_files, label):
         st.session_state[f"index_{label.lower().replace(' ', '_')}"] = 0
 
     selected_image_index = st.session_state[f"index_{label.lower().replace(' ', '_')}"]
-    cols = st.columns(2)
+    cols = st.beta_columns(2)  # Use st.beta_columns() instead of st.columns()
 
     selected_image_path1 = os.path.join(directory, image_files[selected_image_index])
     selected_image1 = Image.open(selected_image_path1)
@@ -65,6 +65,7 @@ def display_images(directory, image_files, label):
         st.session_state[f"index_{label.lower().replace(' ', '_')}"] = max(0, selected_image_index - 1)
     elif next_button:
         st.session_state[f"index_{label.lower().replace(' ', '_')}"] = (selected_image_index + 1) % len(image_files)
+
 
 def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
     sns.set_style("white")
