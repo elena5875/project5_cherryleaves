@@ -9,7 +9,6 @@ import logging
 import matplotlib.pyplot as plt
 from PIL import Image
 
-
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
@@ -23,16 +22,30 @@ logging.info(f"Model path: {model_path}")
 def load_model():
     logging.info("Loading the model...")
     
-    # Check if the model file exists
-    if os.path.exists(model_path):
-        # Load the model
-        logging.info("Model file found. Loading the model...")
-        model = tf.keras.models.load_model(model_path)
-        logging.info("Model loaded successfully.")
-        return model
+    if os.path.isfile(model_path):
+        try:
+            logging.info("Model file found. Loading the model...")
+            model = tf.keras.models.load_model(model_path)
+            logging.info("Model loaded successfully.")
+            return model
+        except Exception as e:
+            logging.error(f"Failed to load the model. Error: {e}")
+            st.error(f"Failed to load the model. Error: {e}")
+            return None
     else:
-        logging.error("Model file not found.")
+        if os.path.exists(model_path):
+            error_message = "The path exists but is not a file. Please check the model file path."
+        else:
+            error_message = "Model file not found. Please check the model file path."
+        
+        logging.error(error_message)
+        st.error(error_message)
         return None
+
+# Example call to the function
+model = load_model()
+
+
 
 # Function to predict image class
 def predict_image_class(image_array, model):
