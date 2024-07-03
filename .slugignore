@@ -1,7 +1,4 @@
 # Ignore Jupyter notebooks and their outputs
-jupyter_notebooks/DataCollection.ipynb
-jupyter_notebooks/DataModelling.ipynb
-jupyter_notebooks/DataVisualization.ipynb
 jupyter_notebooks/Untitled.ipynb
 jupyter_notebooks/.ipynb_checkpoints
 jupyter_notebooks/outputs/*
