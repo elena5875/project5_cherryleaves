@@ -3,6 +3,13 @@ jupyter_notebooks/Untitled.ipynb
 jupyter_notebooks/cherry-leaves.zip
 jupyter_notebooks/DataCollection.ipynb
 jupyter_notebooks/DataCollection.ipynb
+jupyter_notebooks/inputs/test
+jupyter_notebooks/inputs/train
+jupyter_notebooks/.ipynb_checkpoints
+jupyter_notebooks/outputs/history
+jupyter_notebooks/outputs/image_augmentation
+jupyter_notebooks/outputs/model
+jupyter_notebooks/outputs/modelling
 
 # Ignore temporary files and logs
 *.tmp
