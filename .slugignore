@@ -4,6 +4,7 @@ jupyter_notebooks/outputs/*
 jupyter_notebooks/inputs/*
 jupyter_notebooks/cherry-leaves.zip
 jupyter_notebooks/DataCollection.ipynb
+jupyter_notebooks/DataCollection.ipynb
 
 # Ignore temporary files and logs
 *.tmp
