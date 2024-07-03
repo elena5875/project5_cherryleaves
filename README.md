@@ -76,7 +76,7 @@
 
        PAGE 1 A project summary page, explaining the concept of the ML app and why this is being done.
 
-![screenshot-mobile](/workspace/project5_cherryleaves/app_pages/css/images/Generalinformation.png) 
+![screenshot-mobile](app_pages/css/images/Generalinformation.png) 
 
        PAGE 2 A page indicating your project hypothesis and how you validated it across the project.A page where the user can see an image showing the difference between a healthy cherry leaves to a powdery mildew leaves
 
