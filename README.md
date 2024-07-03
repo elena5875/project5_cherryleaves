@@ -76,17 +76,28 @@
 
        PAGE 1 A project summary page, explaining the concept of the ML app and why this is being done.
 
+![screenshot-mobile](/workspace/project5_cherryleaves/app_pages/css/images/Generalinformation.png) 
+
        PAGE 2 A page indicating your project hypothesis and how you validated it across the project.A page where the user can see an image showing the difference between a healthy cherry leaves to a powdery mildew leaves
+
+![screenshot-mobile](/workspace/project5_cherryleaves/app_pages/css/images/hypothesis_and_validation.png) 
 
        PAGE 3 A page where the user can see 2 images showing the difference between a healthy cherry leaves to a powdery mildew leaves
        The user also has a change to download some pictures from kaggle as a source of reference and later on can be used to test the ML app.
 
+![screenshot-mobile](/workspace/project5_cherryleaves/app_pages/css/images/data_visualization.png) 
+![screenshot-mobile](/workspace/project5_cherryleaves/app_pages/css/images/data_visualization2.png) 
+
        PAGE 4 The user can upload an image and the ML should be able to determine if the image is healthy or has mildew.
        The user can also see the table of the image name and the classification of the leaf. Once the user is done the user has the option to download it or print it.
+
+![screenshot-mobile](/workspace/project5_cherryleaves/app_pages/css/images/MLmachine.png) 
+![screenshot-mobile](/workspace/project5_cherryleaves/app_pages/css/images/download_results.png) 
 
        PAGE 5 A page indicating your project hypothesis and how you validated it across the project.
        A technical page displaying your model performance.
 
+![screenshot-mobile](/workspace/project5_cherryleaves/app_pages/css/images/summary.png) 
 
 
 
@@ -143,6 +154,7 @@
               anyio==3.3.4 
               async-lru==1.0.3 
               rich==9.2.0
+streamlit run /workspace/project5_cherryleaves/app_pages/multi_page.py
 
 
 ### Heroku
