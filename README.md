@@ -126,6 +126,25 @@
 
 ## Deployment
 
+### Streamlit
+       I used a streamlit version 0.87.0
+       I also re install the following
+              streamlit==0.87.0 
+              numpy==1.19.2
+              pandas==1.1.2 
+              matplotlib==3.3.1 
+              seaborn==0.11.0 
+              plotly==4.12.0 
+              scikit-learn==0.24.2 
+              tensorflow-cpu==2.6.0
+              keras==2.6.0 
+              protobuf==3.20
+              "altair<5"
+              anyio==3.3.4 
+              async-lru==1.0.3 
+              rich==9.2.0
+
+
 ### Heroku
 
        - The App live link is: `https://cherryleaves5904-854d3ae19318.herokuapp.com/`

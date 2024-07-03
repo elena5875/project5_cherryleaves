@@ -45,8 +45,6 @@ def load_model():
 # Example call to the function
 model = load_model()
 
-
-
 # Function to predict image class
 def predict_image_class(image_array, model):
     logging.info("Predicting image class...")
@@ -95,7 +93,8 @@ def main():
         for uploaded_file in uploaded_files[:10]:
             # Convert the uploaded file to image array
             logging.info(f"Processing uploaded file: {uploaded_file.name}")
-            img = keras_image.load_img(uploaded_file, target_size=(256, 256))
+            img = Image.open(uploaded_file)
+            img = img.resize((256, 256))
             img_array = keras_image.img_to_array(img)
 
             # Check if image is a leaf
