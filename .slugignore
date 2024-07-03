@@ -1,37 +1,41 @@
+# Ignore Jupyter notebooks and their outputs
 jupyter_notebooks/DataCollection.ipynb
 jupyter_notebooks/DataModelling.ipynb
 jupyter_notebooks/DataVisualization.ipynb
 jupyter_notebooks/Untitled.ipynb
 jupyter_notebooks/.ipynb_checkpoints
-jupyter_notebooks/outputs/computed_data.json
-jupyter_notebooks/outputs/image_augmentation
-jupyter_notebooks/outputs/modelling
-jupyter_notebooks/outputs/train
-jupyter_notebooks/inputs/test
-jupyter_notebooks/inputs/train
+jupyter_notebooks/outputs/*
+jupyter_notebooks/inputs/*
 jupyter_notebooks/cherry-leaves.zip
-jupyter_notebooks/outputs/v1/average_image.png
-jupyter_notebooks/outputs/v1/variability_image.png
-jupyter_notebooks/outputs/mean_dimensions_per_label.png
-jupyter_notebooks/outputs/v1/variability_image.png
-jupyter_notebooks/outputs/v1/model_training_losses.png
-jupyter_notebooks/outputs/v1/model_training_acc.png
-app_pages/css/styles.css
-app_pages/predictions.csv
-app_pages/.ipynb_checkpoints
-app_pages/__pycache__/*
-*.vscode
-.gitpod.dockerfile
-.gitpod.yml
-README.md
-kaggle.json
-*.git
+
+# Ignore temporary files and logs
 *.tmp
-/test
-*.backup
 *.log
+*.backup
 *.pdf
 *.pyc
 *.pyo
 __pycache__/
+
+# Ignore GitPod specific files
+.gitpod.dockerfile
+.gitpod.yml
+
+# Ignore configuration and other unnecessary files
+*.vscode
+*.git
+
+# Ignore generated data and predictions
+app_pages/predictions.csv
+app_pages/__pycache__/*
+app_pages/css/styles.css
+app_pages/.ipynb_checkpoints
+
+# Ignore node_modules if you're using Node.js
 node_modules/
+
+# Ignore README.md if it's not needed at runtime
+README.md
+
+# Ignore other test and unnecessary files
+/test
