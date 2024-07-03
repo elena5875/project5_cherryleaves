@@ -1,9 +1,9 @@
 # Ignore Jupyter notebooks and their outputs
 jupyter_notebooks/Untitled.ipynb
-jupyter_notebooks/.ipynb_checkpoints
 jupyter_notebooks/outputs/*
 jupyter_notebooks/inputs/*
 jupyter_notebooks/cherry-leaves.zip
+jupyter_notebooks/DataCollection.ipynb
 
 # Ignore temporary files and logs
 *.tmp
@@ -23,10 +23,10 @@ __pycache__/
 *.git
 
 # Ignore generated data and predictions
-app_pages/predictions.csv
+predictions.csv
 app_pages/__pycache__/*
 app_pages/css/styles.css
-app_pages/.ipynb_checkpoints
+app_pages/css/images
 
 # Ignore node_modules if you're using Node.js
 node_modules/
