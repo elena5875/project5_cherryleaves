@@ -130,11 +130,14 @@
 
 
 ## Unfixed Bugs
-       1.I tried to create another machine learning for the ML app wherein the ML app can also detect if the image is a leaf or not. But has been unsuccessful.
+
+       1.I tried to create another machine learning for the ML app wherein the ML app can also detect if the image is a leaf or not. Tested the ML machine with a logo of facebook and it has detected an error in its reading. However it has not said that it is either a leaf or an inanimate object.
        
-       2.Deploying the ML app to heroku. For days I have been trying to deploy my ML app in Heroku and it seems to sometimes work sometimes not. 
+       2.Deploying the ML app to heroku. For days I have been trying to deploy my ML app in Heroku and it seems to sometimes work sometimes not. I have fixed this bug and hopefully the app will now run smoothly
        
-       3.For Some reason when I run my ML app locally everything works fine but if I run my app in Heroku. Heroku has decided that SavedModel file does not exist at: jupyter_notebooks/outputs/v1/cherry_leaves_model.keras/{saved_model.pbtxt|saved_model.pb}. I tried everything however nothing is working until the deadline.
+       3.For Some reason when I run my ML app locally everything works fine but if I run my app in Heroku. Heroku has decided that SavedModel file does not exist at: jupyter_notebooks/outputs/v1/cherry_leaves_model.keras/{saved_model.pbtxt|saved_model.pb}. This bug has also been fixed and is now running smoothly in both heroku and locally.
+
+       4. I have encountered Error R14(memory quota exceed). I seems that my memory qouta for this app is about to exceed its limit. However, the website is still functioning properly. I need to to create a monitor performance or upgrade my heroku dyno. For now I will not change anything unless during testing the website would crash.
 
 ## Deployment
 
@@ -155,7 +158,7 @@
               anyio==3.3.4 
               async-lru==1.0.3 
               rich==9.2.0
-streamlit run /workspace/project5_cherryleaves/app_pages/multi_page.py
+type at the terminal 'streamlit run /workspace/project5_cherryleaves/app_pages/multi_page.py'
 
 
 ### Heroku

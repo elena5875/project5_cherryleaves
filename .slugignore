@@ -9,6 +9,7 @@ jupyter_notebooks/outputs/history
 jupyter_notebooks/outputs/image_augmentation
 jupyter_notebooks/outputs/model
 jupyter_notebooks/outputs/modelling
+predictions.csv
 
 # Ignore temporary files and logs
 *.tmp
