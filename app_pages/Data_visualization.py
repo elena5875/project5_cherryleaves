@@ -96,3 +96,4 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
             axes[i, j].imshow(img)
             axes[i, j].axis('off')
         st.pyplot(fig)
+        

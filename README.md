@@ -84,6 +84,7 @@
 
        PAGE 3 A page where the user can see 2 images showing the difference between a healthy cherry leaves to a powdery mildew leaves
        The user also has a change to download some pictures from kaggle as a source of reference and later on can be used to test the ML app.
+       You can also download some images for live production from kaggle dataset for your own reference
 
 ![screenshot-mobile](app_pages/css/images/data_visualization.png) 
 ![screenshot-mobile](app_pages/css/images/data_visualization2.png) 
@@ -189,6 +190,7 @@ streamlit run /workspace/project5_cherryleaves/app_pages/multi_page.py
        - plotly 5.12.0         used for plotting the model's learning curve 
        - seaborn 0.11.0        used for plotting the model's confusion matrix
        - streamlit             used for creating and sharing this project's interface
+       
 ## Credits and References
 
        https://github.com/GyanShashwat1611/WalkthroughProject01/blob/main/jupyter_notebooks/02%20-%20DataVisualization.ipynb
