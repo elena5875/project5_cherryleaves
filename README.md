@@ -31,11 +31,14 @@
 
        1. Data Collection: Collect different dataset consisting of images for both healthy cherry leaves and leaves affected with powdery mildew. This is to ensure that the dataset encompasses various stages of infection and environmental conditions to enhance the accuracy of the model.
 
-       2. Data Preprocessing: Process the collected images to standardize their format, resolution, and orientation. Additionally, perform preprocessing techniques such as augmentation to enhance the model's ability to generalize across different samples.
+       2. Data Preprocessing: Process the collected images to standardize their format, resolution, and orientation. Additionally, perform preprocessing techniques such as augmentation to enhance the model's ability to generalize across different samples. The images provided in the test are in different sizes, resolutions and orientations to make sure that the ML machine can practice reading the images in all forms. 
 
        3. Model Development: Design the model to learn discriminative features from the input images and make accurate predictions regarding leaf health status.
 
-       4. Training and Validation:  Train the model on the training data while looking at the  performance on the validation set. Adjust hyperparameters and network architecture as necessary to optimize model performance.
+       4. Training and Validation:  Train the model on the training data while looking at the  performance on the validation set. Adjust hyperparameters and network architecture as necessary to optimize model performance. The ratio are the following: 
+                     Training Set: 70% of the total data
+                     Validation Set: 10% of the total data
+                     Test Set: 20% of the total data
 
        5. Evaluation: Assess the trained model's performance using the reserved testing set. Measure key metrics such as accuracy, and F1-score to quantify the model's ability to correctly classify healthy and infected leaves.
 
