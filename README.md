@@ -108,6 +108,7 @@
 
 
 ## How to use this repo
+To access jupyter notebook
 
        1. Use this template to create your GitHub project repo
 
@@ -130,6 +131,14 @@
        10. Choose the notebook you want to open
 
        11. Click the kernel button and choose Python Environments. Also don't forget to click and choose trusted.
+To access the App
+
+       1. Make sure that you install all the requirements using `pip3 install -r requirements.txt` in the terminal command
+
+       2. Once the requirements are all installed type in the terminal command 'streamlit run /workspace/project5_cherryleaves/app_pages/multi_page.py'
+
+       3. Make sure that the browser is in public and you should be able to see the app in another page
+
 
 
 ## Unfixed Bugs
