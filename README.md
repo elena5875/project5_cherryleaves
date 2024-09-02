@@ -71,6 +71,33 @@
        - The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
        - The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
+       The data set has the following ratios to split the dataset
+        - Training set is 70%   (0.7)
+        - Validation set is 10%  (0.1)
+        - Test set is 20%       (0.2)
+       
+       To determine the ratio of the validation set relative to the test set:
+
+       Validation to Test Set Ratio Calculation
+       Validation Set Ratio: 10% (0.10)
+              Test Set Ratio: 20% (0.20)
+       The ratio of the validation set to the test set is calculated as:
+
+              Ratio = Validation Set Ratio         0.10
+                     ______________________  =    ______  = 0.5
+                     Test Set Ratio                0.20
+
+              Validation set is 50% of the size of the test set.
+
+
+       The dataset images has also been checked if data is not an image it has been removed. 
+       We have also made sure to create an average image sizes both sets of healthy and Powdery Mildew set
+       Average image size in Healthy set: (256, 256)
+       Average image size in Powdery Mildew set: (256, 256)
+       Computed data:
+       Average size of healthy images: (256, 256)
+       Average size of powdery mildew images: (256, 256)
+
 
 ## Dashboard Design
 
