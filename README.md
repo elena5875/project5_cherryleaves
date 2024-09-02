@@ -178,6 +178,8 @@ To access the App
 
        4. I have encountered Error R14(memory quota exceed). I seems that my memory qouta for this app is about to exceed its limit. However, the website is still functioning properly. I need to to create a monitor performance or upgrade my heroku dyno. For now I will not change anything unless during testing the website would crash.
 
+       5. Outdated Version of the Heroku. I am currently using a soon to be outdated version of the Heroku which is Heroku 20. However, if I upgrade my heroku app the ML app will not work due to many applications will not run properly. For now I am using this outdated app and hopefully will run during evaluation.
+
 ## Deployment
 
 ### Streamlit
